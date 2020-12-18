@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block title_block %} rent List {% endblock %}
+{%block body_block %}
+
+<div class="row m-5 p-5">
+  <div class="col-md-3">
+    {% for booking in bookings %}
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title">Package:{{booking.rent.pack_category}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted"></h6>
+        <p class="card-text">
+          Car:{{booking.rent.car_category}} <br />
+          Start Time: {{booking.check_in}} <br />
+          End Time : {{booking.check_out}}
+        </p>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+
+{%endblock %}

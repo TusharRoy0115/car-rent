@@ -1,0 +1,101 @@
+{% extends "base.html" %} {% block title_block %} rent List {% endblock %}
+{%block body_block %}
+
+<div class="about-us">
+  <div class="pricing-details-title">
+    <h2 style="color: firebrick">HOURLY CAR RENTAL</h2>
+    <p style="font-weight: lighter">
+      Flexible Hourly Packages that will cover you well!
+    </p>
+  </div>
+  <hr />
+  {% for hourly_rent in Hourly_Rent %}
+
+  <div class="product-row">
+    <div class="card w-100 my-5">
+      <h5 class="card-header">{{hourly_rent.car_category}}</h5>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col">
+                <img src="/media/{{hourly_rent.image}}" /> <br />
+                <br />
+                <br />
+                <i
+                  class="fa fa-arrow-circle-right"
+                  style="color: firebrick"
+                ></i>
+                No other Fuel & Driver Cost. <br />
+                <i
+                  class="fa fa-arrow-circle-right"
+                  style="color: firebrick"
+                ></i>
+                Parking fees not included. <br />
+                <i
+                  class="fa fa-arrow-circle-right"
+                  style="color: firebrick"
+                ></i>
+                Standard AC Car: X Corolla, Axio, Allion, Fielder, Premio
+                (depends on availability). <br />
+                <i class="fa fa-arrow-circle-right" style="color: firebrick">
+                </i>
+                Travel within Dhaka City Corporation only. <br />
+              </div>
+              <div class="col">
+                <i
+                  class="fa fa-arrow-circle-right"
+                  style="color: firebrick"
+                ></i>
+                For travelling to Old town/Sadarghat, additional 250 Taka will
+                be added <br />
+                <i
+                  class="fa fa-arrow-circle-right"
+                  style="color: firebrick"
+                ></i>
+                with the base fare.This rate is not valid 7 days before and
+                after the Eid/Puja vacation. <br />
+                <i class="fa fa-arrow-circle-right" style="color: firebrick">
+                </i>
+                This fee is for first 4 hours service including CNG/Fuel Cost of
+                40 KM. <br />
+                <i class="fa fa-arrow-circle-right" style="color: firebrick"></i
+                >Each extra kilometer will charge 10 Taka.Each additional hour
+                will be charged 300 Taka.Service Hour in between 7:00 am -
+                11:59pm, after 12am, late night fee 400 Taka per hour will be
+                charged.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="hourly-product-details">
+              <div class="row">
+                <p style="color: gray; margin-left: 5rem">AS LOW AS</p>
+                <br />
+              </div>
+              <div class="row">
+                <h5 style="color: black; margin-left: 5rem">৳2000</h5>
+                <br />
+              </div>
+              <div class="row" style="margin-left: 3rem">
+                <a
+                  href="{% url 'App_rent:rent-details' pack_category=hourly_rent.pack_category pk=hourly_rent.id %}"
+                  class="btn btn-danger btn-lg"
+                  >Book Now</a
+                >
+              </div>
+              <div class="row mt-5">
+                <p style="color: gray; margin-left: 5rem">Pay With</p>
+                <br />
+                <img src="/media/images/ssl_commerz_pay_with.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{%endblock %}

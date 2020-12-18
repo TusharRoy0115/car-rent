@@ -1,0 +1,71 @@
+{% extends "base.html" %} {% block title_block %} rent List {% endblock %}
+{%block body_block %}
+
+<div class="about-us">
+  <div class="pricing-details-title">
+    <p style="font-weight: lighter"></p>
+  </div>
+  <hr />
+  <div class="product-row">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-header"></div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <div class="card">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col">
+                      <h5>{{item.price}}</h5>
+                      <p style="font-size: 16px; font-weight: bold">
+                        {{item.car_category}}
+                      </p>
+                      <p>Airport to/from City</p>
+                      <a href="#" class="btn btn-warning">Book</a>
+                    </div>
+                    <div>
+                      <img src="/media/{{item.image}}" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </blockquote>
+          </div>
+        </div>
+        </div>
+        <div class="col">
+        <form method="POST">
+        {% comment %} {% csrf_token %}
+          <tr><th><label for="id_check_in">Check in:</label></th><td>
+            <input type="datetime-local" name="check_in" required id="id_check_in"></td></tr>
+<tr><th><label for="id_check_out">Check out:</label></th><td><input type="datetime-local" name="check_out" required id="id_check_out"></td></tr>
+
+        <button type="submit" class="btn btn-primary" > Book </button>  {% endcomment %}
+        {% csrf_token %}
+
+                <!-- Input Div -->
+                <div class="input-div">
+                    <label for="id_check_in">Check In : </label>
+                    <input type="datetime-local" id="id_check_in" name="check_in">
+                </div>
+
+                <!-- Input Div -->
+                <div class="input-div">
+                    <label for="id_check_out">Check Out : </label>
+                    <input type="datetime-local" id="id_check_out" name="check_out">
+                </div>
+
+                <!-- Input Div -->
+                <div class="input-div">
+                    <button type="submit">Book</button>
+                </div>
+        </form>
+      
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {%endblock %}
+</div>

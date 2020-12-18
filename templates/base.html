@@ -1,0 +1,385 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="{% static 'base.css' %}" />
+    <link
+      href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <title>{% block title_block %} Home {% endblock %}</title>
+  </head>
+
+  <body>
+    <!-- navbar start -->
+    <div class="top-bar">
+      <ul class="nav__links">
+        <div class="row">
+          <div class="col mr-3 pr-3">
+            <li><a href="#">Blog</a></li>
+            {% if user.is_authenticated %}
+            <li>
+              <a href="{% url 'App_login:profile' %}">{{user.username}}</a>
+            </li>
+            <li><a href="{% url 'App_login:logout' %}">LogOut</a></li>
+
+            {% else %}
+            <li><a href="{% url 'App_login:sign_in' %}">Login</a></li>
+            /
+            <li><a href="{% url 'App_login:sign_up' %}">Registration</a></li>
+            {% endif %}
+          </div>
+        </div>
+      </ul>
+    </div>
+
+    <div class="mid-bar">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <img class="logo" src="/media/images/logo.png" alt="logo" />
+        </div>
+        <div class="col-lg-8 col-md-6">
+          <div class="row">
+            <ul class="nav_links">
+              <li>
+                <i class="fa fa-phone" style="font-weight: bold"> Call Us</i>
+                <br />
+                <span class="mid-bar-details">
+                  <a href="tel:+8801715880942" style="color: firebrick">
+                    +8801715880942</a
+                  >
+                </span>
+              </li>
+              <li>
+                <i class="fa fa-envelope" style="font-weight: bold">
+                  Email Us</i
+                >
+                <br />
+
+                <span class="mid-bar-details">
+                  <a href="mailto:info@carrent.com" style="color: firebrick"
+                    >info@carrent.com</a
+                  >
+                </span>
+              </li>
+              <li>
+                <i class="fa fa-whatsapp" style="font-weight: bold">
+                  Whatsapp Us</i
+                >
+                <br />
+                <span class="mid-bar-details">
+                  <a href="tel:+8801715880942" style="color: firebrick">
+                    +8801715880942</a
+                  >
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div class="row">
+            <h3 class="mid-bar-text">Your new experience of renting car!!</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'App_rent:Home' %}"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'App_rent:about_us' %}"
+                >About Us</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'App_rent:pricing' %}"
+                >Pricing</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'App_rent:packages' %}"
+                >Packages</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'App_rent:contact' %}"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- navbar end -->
+    {% block body_block %}
+    <!-- carousal start -->
+    <div>
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <ol class="carousel-indicators">
+          <li
+            data-target="#carouselExampleIndicators"
+            data-slide-to="0"
+            class="active"
+          ></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="/media/images/rental1.jpg"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="/media/images/rental2.jpg"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="/media//images/rental3.jpg"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <!-- carousal end -->
+
+    <!-- our packages start -->
+
+    <div class="car-product">
+      <div class="car-list-title">
+        <h2>Our Packages</h2>
+      </div>
+      <div class="car-list">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card" style="width: 18rem">
+              <img
+                src="/media/images/car1.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Airport PickUp</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <a
+                  href="{% url 'App_rent:Airport-rent' %}"
+                  class="btn btn-secondary"
+                  >Book</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card" style="width: 18rem">
+              <img
+                src="/media/images/car-02.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Hourly Service</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <a
+                  href="{% url 'App_rent:hourly-rent' %}"
+                  class="btn btn-secondary"
+                  >Book</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card" style="width: 18rem">
+              <img
+                src="/media/images/car-03.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Daily Basis</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <a
+                  href="{% url 'App_rent:daily-dhaka-rent' %}"
+                  class="btn btn-secondary"
+                  >Book</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="product-why-us">
+        <div class="product-why-us-title">
+          <h4 style="color: firebrick">Why Car-rent.bd?</h4>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-md-4">
+            <p><img src="media/images/why-1.png" /> Online Booking</p>
+          </div>
+          <div class="vertical-line"></div>
+          <div class="col-md-4">
+            <p><img src="media/images/why-3.png" /> Affordable Prices</p>
+          </div>
+          <div class="vertical-line"></div>
+          <div class="col-md-3">
+            <p><img src="media/images/why-5.png" /> Customer Support</p>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-md-4">
+            <p><img src="media/images/why-2.png" /> Accepts VISA & Maste</p>
+          </div>
+          <div class="vertical-line"></div>
+          <div class="col-md-4">
+            <p><img src="media/images/why-4.png" /> Safe and Reliable</p>
+          </div>
+          <div class="vertical-line"></div>
+          <div class="col-md-3">
+            <p><img src="media/images/why-6.png" /> Quality Cars & Drivers</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- our packages end -->
+
+    {% endblock %}
+
+    <!-- footer start -->
+
+    <div class="footer">
+      <div class="row">
+        <div class="col-md-3">
+          <ul>
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Packages</li>
+            <li>Pricing</li>
+            <li>Contact Us</li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <ul>
+            <li>Our Cars</li>
+            <li>Our Clients</li>
+            <li>Terms & Conditions</li>
+            <li>Privacy Policy</li>
+            <li>Customized Payment</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="connect-us">
+              <p style="color: whitesmoke">Connect with us</p>
+              <hr class="hrline" />
+              <i class="fa fa-facebook-square"></i>
+              <i class="fa fa-twitter-square"></i>
+              <i class="fa fa-linkedin-square"></i>
+              <i class="fa fa-pinterest-square"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="connect-us">
+              <p style="color: whitesmoke">We Accepts</p>
+              <img src="/media/images/ssl_commerz_pay_with.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer end -->
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js "
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj "
+      crossorigin="anonymous "
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js "
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx "
+      crossorigin="anonymous "
+    ></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js " integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js " integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s " crossorigin="anonymous "></script>
+    -->
+  </body>
+</html>

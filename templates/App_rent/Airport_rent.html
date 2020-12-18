@@ -1,0 +1,57 @@
+{% extends "base.html" %} {% block title_block %} rent List {% endblock %}
+{%block body_block %}
+<!-- Pricing-details start -->
+<div class="about-us">
+  <div class="pricing-details-title">
+    <h2 style="color: firebrick">AIRPORT TRANSFER</h2>
+    <p style="font-weight: lighter">
+      No more worries about Airport Transfers in Bangladesh!! Try our service to
+      save time and hassle on your next trip to Bangladesh.
+    </p>
+  </div>
+  <hr />
+  <div class="product-row">
+    {% for airport_rent in Airport_Rent %}
+
+    <div class="row">
+      <div class="card">
+        <div class="card-header">
+          <h5>Hazrat Shah Jalal International Airport - HIACE Microbus</h5>
+          <p>
+            On Time, Every Time, Guaranteed! MEET your driver at the airport
+            arrivals with the Meet & Greet option!
+          </p>
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <div class="card">
+              <div class="card-header">
+                <div class="row">
+                  <div class="col">
+                    <h5>{{airport_rent.price}}</h5>
+                    <p style="font-size: 16px; font-weight: bold">
+                      {{airport_rent.car_category}}
+                    </p>
+                    <p>Airport to/from City</p>
+                    <a
+                      href="{% url 'App_rent:rent-details' pack_category=airport_rent.pack_category pk=airport_rent.id %}"
+                      class="btn btn-warning"
+                      >Book</a
+                    >
+                  </div>
+                  <div>
+                    <img src="/media/{{airport_rent.image}}" />
+                    {{airport_rent.id}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<!-- Pricing-details end -->
+{% endblock %}

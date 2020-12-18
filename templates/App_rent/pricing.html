@@ -1,0 +1,172 @@
+{% extends "base.html" %} {% block title_block %} rent List {% endblock %}
+{%block body_block %}
+
+<!-- Pricing-list start -->
+<div class="about-us">
+  <div class="car-list-title">
+    <h2 style="color: firebrick">
+      Our all Flexible Pricing Plan that covers you well
+    </h2>
+  </div>
+  <div class="row m-3">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          <h4>AIRPORT TRANSFER</h4>
+          <p>Pick & Drop to and from Airport</p>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <h5>৳ 1500++</h5>
+              <p>
+                Sedan Car/Microbus Travel from and to Any Airport in Bangladesh
+              </p>
+            </div>
+            <div class="col">
+              <img src="/media/images/car-03.png" />
+            </div>
+          </div>
+          <a
+            href="{% url 'App_rent:Airport-rent' %}"
+            class="btn btn-warning mt-3"
+            >Details</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          <h4>HOURLY CAR RENT</h4>
+          <p>Only for Travelling inside Dhaka Metro</p>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <h5>৳ 1750++</h5>
+              <p>
+                Sedan Car/Microbus Flexible 4 to 10 Hours Service Including Fuel
+                Cost
+              </p>
+            </div>
+            <div class="col">
+              <img src="/media/images/car-022.png" />
+            </div>
+          </div>
+          <a
+            href="{% url 'App_rent:hourly-rent' %}"
+            class="btn btn-warning mt-3"
+            >Details</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          <h4>DAILY BASIS RENT A CAR - INSIDE DHAKA</h4>
+          <p>Excluding Fuel & Driver Cost</p>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <h5>৳ Check Details</h5>
+              <p>
+                Sedan Car/Microbus Various Type of Cars No Mileage Limit No
+                Hidden Cost
+              </p>
+            </div>
+            <div class="col">
+              <img src="/media/images/car-06.png" />
+            </div>
+          </div>
+          <a
+            href="{% url 'App_rent:daily-dhaka-rent' %}"
+            class="btn btn-warning mt-3"
+            >Details</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row my-5 mx-3">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          <h4>DAILY BASIS RENT A CAR - OUTSIDE DHAKA</h4>
+          <p>Excluding Fuel & Driver Cost</p>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <h5>৳ Check Details</h5>
+              <p>Travel Anywhere No Mileage Limit Experienced Driver</p>
+            </div>
+            <div class="col">
+              <img src="/media/images/NOAH_PNG.png" />
+            </div>
+          </div>
+          <a
+            href="{% url 'App_rent:daily-dhaka-rent' %}"
+            class="btn btn-warning mt-3"
+            >Details</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          <h4>MONTHLY CAR RENTAL</h4>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <h5>৳ Check Details</h5>
+              <p>
+                Our Multi-Month Program is available on a wide range of
+                vehicles.
+              </p>
+            </div>
+            <div class="col">
+              <img src="/media/images/mic-011.png" />
+            </div>
+          </div>
+          <a
+            href="{% url 'App_rent:monthly-rent' %}"
+            class="btn btn-warning mt-3"
+            >Details</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          <h4>OFFICE PICK & DROP</h4>
+          <p>Smart Tranportation Solution for Office Going People</p>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <h5>৳ 8500++</h5>
+              <p>
+                Microbus This rate is for 26 Working Days/Person Shared Ride
+                Basis
+              </p>
+            </div>
+            <div class="col">
+              <img src="/media/images/mic-03.png" />
+            </div>
+          </div>
+          <a href="#" class="btn btn-warning mt-3">Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pricing-list end -->
+
+{%endblock %}

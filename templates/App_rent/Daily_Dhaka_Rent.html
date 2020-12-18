@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block title_block %} rent List {% endblock %}
+{%block body_block %}
+
+<!-- Pricing-list start -->
+<div class="about-us">
+  <div class="row car-list-title">
+    <h2 style="color: firebrick">Daily Basis Rent A Car - Inside Dhaka</h2>
+    <div class="row">
+      <p style="color: firebrick; font-weight: lighter">
+        Following rates are Excluding Fuel & Driver Cost for using the vehicle
+        inside Dhaka City.
+      </p>
+    </div>
+  </div>
+
+  <div class="row my-5 mx-3">
+    {% for D_Dhaka_Rent in Daily_Dhaka_Rent %}
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <h5>{{D_Dhaka_Rent.price}}</h5>
+              <p>
+                Toyota Premio <br />
+                Model: 2012-14 <br />
+                Premium Sedan Car
+              </p>
+            </div>
+            <div class="col">
+              <img src="/media/{{D_Dhaka_Rent.image}}" style="width: 100%" />
+            </div>
+          </div>
+          <a
+            href="{% url 'App_rent:rent-details' pack_category=D_Dhaka_Rent.pack_category pk=D_Dhaka_Rent.id %}"
+            class="btn btn-warning mt-3"
+            >Details</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+
+<!-- Pricing-list end -->
+
+{% endblock %}
